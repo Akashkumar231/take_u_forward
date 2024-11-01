@@ -1,14 +1,47 @@
 package ipaexampractise;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class Solution {
 
     public static void main(String [] args){
 
+        Scanner input = new Scanner(System.in);
+
+        List<Customer> arrayList = new ArrayList<>();
+
+        for (int i = 0; i< 4 ; i++)
+
+        {
+
+            int id = input.nextInt();
+            input.nextLine();
+            String name = input.nextLine();
+//            input.nextLine();
+            int bill = input.nextInt();
+
+            Customer customer = new Customer(id,name,bill);
+            arrayList.add(customer);
+
+
+        }
+
+        System.out.println(arrayList);
+
+        Collections.sort(arrayList,new Comparator<Customer>(){
+
+            public int compare(Customer customer1 , Customer customer2){
+
+                return  customer2.getCustomer_Name().compareTo(customer1.getCustomer_Name());
+
+            }
+
+
+        });
+
+           System.out.println(arrayList);
+
+        /*
         Person p1 = new Person(1,"Akashkumar Yadav",5000);
         Person p2 = new Person(2,"Pranav Yadav",60000);
         Person p3 = new Person(3,"Prachi Yadav",65000);
@@ -22,14 +55,7 @@ public class Solution {
 
         System.out.println(arrayList);
 
-//        Collections.sort(arrayList, new Comparator<Person>() {
-//            @Override
-//            public int compare(Person o1, Person o2) {
-//                return Integer.valueOf(o2.getSalary()).compareTo(o1.getSalary());
-//            }
-//        });
-
-        Collections.sort(arrayList,new Comparator<Person>(){
+                Collections.sort(arrayList,new Comparator<Person>(){
 
 
             @Override
@@ -41,9 +67,12 @@ public class Solution {
 
         });
 
-//        Collections.sort();
-
         System.out.println(arrayList);
+
+
+         */
+
+
 
     }
 
